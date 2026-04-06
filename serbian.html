@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Сербский язык</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F5F0E8;
+  --card: #FFFFFF;
+  --primary: #2D6A4F;
+  --primary-light: #52B788;
+  --primary-pale: #D8F3DC;
+  --accent: #E76F51;
+  --accent-pale: #FDECEA;
+  --text: #1B2D27;
+  --text-muted: #6B8C7A;
+  --border: #E0DDD5;
+  --streak: #F4A261;
+  --wrong: #E63946;
+  --wrong-pale: #FFE5E7;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html, body { height: 100%; background: var(--bg); font-family: 'Nunito Sans', sans-serif; color: var(--text); }
+
+.app { max-width: 420px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ── SCREENS ── */
+.screen { display: none; flex-direction: column; flex: 1; padding: 1.25rem 1rem 2rem; }
+.screen.active { display: flex; }
+
+/* ── HOME ── */
+.home-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+.home-greeting { font-family: 'Nunito', sans-serif; font-size: 22px; font-weight: 800; color: var(--text); }
+.home-sub { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+.streak-badge { display: flex; align-items: center; gap: 6px; background: var(--card); border: 1.5px solid var(--border); border-radius: 50px; padding: 7px 14px; }
+.streak-fire { font-size: 18px; }
+.streak-num { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; color: var(--streak); }
+.streak-lbl { font-size: 11px; color: var(--text-muted); }
+
+.section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.75rem; }
+
+.topic-card { background: var(--card); border-radius: var(--radius); padding: 1.1rem 1.25rem; margin-bottom: 10px; cursor: pointer; border: 1.5px solid var(--border); transition: transform 0.12s, box-shadow 0.12s; display: flex; align-items: center; gap: 1rem; }
+.topic-card:active { transform: scale(0.98); }
+.topic-icon { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.topic-icon.green { background: var(--primary-pale); }
+.topic-icon.orange { background: #FFF0E6; }
+.topic-info { flex: 1; }
+.topic-name { font-family: 'Nunito', sans-serif; font-size: 15px; font-weight: 700; color: var(--text); }
+.topic-meta { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+.topic-arrow { font-size: 20px; color: var(--border); }
+.topic-progress-bar { height: 4px; background: var(--border); border-radius: 4px; margin-top: 8px; overflow: hidden; }
+.topic-progress-fill { height: 4px; border-radius: 4px; background: var(--primary-light); transition: width 0.4s; }
+
+.tip-box { background: var(--card); border-radius: var(--radius); padding: 1rem 1.25rem; border: 1.5px solid var(--border); font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-top: 0.75rem; }
+.tip-box strong { color: var(--text); }
+
+/* ── THEORY ── */
+.theory-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1.25rem; }
+.back-btn { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 7px 13px; font-size: 13px; font-weight: 600; color: var(--text-muted); cursor: pointer; font-family: 'Nunito Sans', sans-serif; }
+.theory-title { font-family: 'Nunito', sans-serif; font-size: 16px; font-weight: 800; color: var(--text); }
+.theory-body { background: var(--card); border-radius: var(--radius); padding: 1.25rem; border: 1.5px solid var(--border); margin-bottom: 1rem; line-height: 1.7; font-size: 14px; color: var(--text); }
+.theory-body h2 { font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 800; margin-bottom: 0.75rem; color: var(--primary); }
+.theory-body h3 { font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700; margin: 1rem 0 0.5rem; color: var(--text); }
+.theory-body p { margin-bottom: 0.6rem; }
+.theory-body ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.theory-body li { margin-bottom: 0.3rem; }
+.conj-table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 13px; }
+.conj-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); }
+.conj-table td:first-child { color: var(--text-muted); width: 38%; }
+.conj-table td:nth-child(2) { font-weight: 700; color: var(--primary); width: 22%; }
+.conj-table td:nth-child(3) { font-weight: 700; color: var(--accent); width: 22%; }
+.conj-table td:last-child { color: var(--text-muted); font-size: 12px; }
+.conj-table tr:last-child td { border-bottom: none; }
+.theory-badge { display: inline-block; background: var(--primary-pale); color: var(--primary); border-radius: 6px; padding: 2px 8px; font-size: 12px; font-weight: 600; margin: 2px; }
+.theory-badge.neg { background: var(--accent-pale); color: var(--accent); }
+.start-practice-btn { width: 100%; background: var(--primary); color: white; border: none; border-radius: var(--radius); padding: 15px; font-size: 16px; font-weight: 700; font-family: 'Nunito', sans-serif; cursor: pointer; margin-top: 0.5rem; }
+.start-practice-btn:active { background: #235740; }
+
+/* ── TASK SCREEN ── */
+.task-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+.task-topic-lbl { font-size: 12px; font-weight: 600; color: var(--text-muted); }
+.progress-bar { flex: 1; background: var(--border); border-radius: 4px; height: 6px; }
+.progress-fill { height: 6px; border-radius: 4px; background: var(--primary-light); transition: width 0.4s; }
+.task-count { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+
+.task-type-pill { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--primary); background: var(--primary-pale); border-radius: 50px; padding: 4px 12px; margin-bottom: 0.75rem; }
+.task-type-pill.orange { color: #C05A2A; background: #FFF0E6; }
+
+.task-card { background: var(--card); border-radius: var(--radius); padding: 1.25rem; border: 1.5px solid var(--border); margin-bottom: 0.75rem; }
+.task-question { font-family: 'Nunito', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 1.25rem; line-height: 1.4; }
+.task-question .blank { display: inline-block; border-bottom: 2.5px solid var(--primary); min-width: 60px; text-align: center; color: var(--primary); font-weight: 800; }
+
+.opts { display: flex; flex-direction: column; gap: 9px; }
+.opt { background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px 16px; font-size: 15px; font-weight: 600; font-family: 'Nunito Sans', sans-serif; color: var(--text); cursor: pointer; text-align: left; transition: background 0.1s, border-color 0.1s; }
+.opt:active:not(:disabled) { transform: scale(0.98); }
+.opt.correct { background: var(--primary-pale); border-color: var(--primary-light); color: var(--primary); }
+.opt.wrong { background: var(--wrong-pale); border-color: var(--wrong); color: var(--wrong); }
+
+/* sentence builder */
+.sent-display { background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; min-height: 50px; font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 0.6rem; cursor: pointer; line-height: 1.6; transition: border-color 0.15s; }
+.sent-display.correct { border-color: var(--primary-light); background: var(--primary-pale); color: var(--primary); }
+.sent-display.wrong { border-color: var(--wrong); background: var(--wrong-pale); color: var(--wrong); }
+.sent-hint { font-size: 11px; color: var(--text-muted); margin-bottom: 0.75rem; }
+.word-bank { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: var(--card); border: 1.5px solid var(--border); border-radius: 50px; padding: 7px 14px; font-size: 14px; font-weight: 600; color: var(--text); cursor: pointer; transition: opacity 0.1s, background 0.1s; }
+.chip.used { opacity: 0.22; pointer-events: none; }
+.chip:active { background: var(--primary-pale); }
+
+/* fill-in */
+.fill-wrap { position: relative; margin-bottom: 0.5rem; }
+.fill-input { width: 100%; background: var(--bg); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px 16px; font-size: 16px; font-weight: 600; color: var(--text); outline: none; font-family: 'Nunito Sans', sans-serif; }
+.fill-input:focus { border-color: var(--primary-light); }
+.fill-input.correct { border-color: var(--primary-light); background: var(--primary-pale); color: var(--primary); }
+.fill-input.wrong { border-color: var(--wrong); background: var(--wrong-pale); color: var(--wrong); }
+
+.feedback-box { border-radius: var(--radius-sm); padding: 11px 14px; font-size: 13px; font-weight: 600; margin-bottom: 0.75rem; display: none; }
+.feedback-box.show { display: block; }
+.feedback-box.ok { background: var(--primary-pale); color: var(--primary); }
+.feedback-box.err { background: var(--wrong-pale); color: var(--wrong); }
+
+.check-btn { width: 100%; background: var(--primary); color: white; border: none; border-radius: var(--radius); padding: 14px; font-size: 16px; font-weight: 700; font-family: 'Nunito', sans-serif; cursor: pointer; }
+.check-btn:disabled { background: var(--border); color: var(--text-muted); cursor: default; }
+.check-btn:active:not(:disabled) { background: #235740; }
+.next-btn { width: 100%; background: none; border: 1.5px solid var(--border); border-radius: var(--radius); padding: 12px; font-size: 15px; font-weight: 600; font-family: 'Nunito', sans-serif; color: var(--text); cursor: pointer; margin-top: 8px; }
+.next-btn:active { background: var(--border); }
+
+/* ── DONE ── */
+.done-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem 1rem; }
+.done-emoji { font-size: 56px; margin-bottom: 1rem; }
+.done-title { font-family: 'Nunito', sans-serif; font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 0.4rem; }
+.done-sub { font-size: 14px; color: var(--text-muted); margin-bottom: 2rem; }
+.score-row { display: flex; gap: 10px; width: 100%; margin-bottom: 1.5rem; }
+.score-card { flex: 1; background: var(--card); border-radius: var(--radius); padding: 1rem 0.75rem; border: 1.5px solid var(--border); }
+.score-num { font-family: 'Nunito', sans-serif; font-size: 26px; font-weight: 800; color: var(--text); }
+.score-lbl { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+.done-btns { width: 100%; display: flex; flex-direction: column; gap: 8px; }
+
+/* ── utils ── */
+.mt1 { margin-top: 1rem; }
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- HOME -->
+<div id="s-home" class="screen active">
+  <div class="home-top">
+    <div>
+      <div class="home-greeting">Srpski jezik 🇷🇸</div>
+      <div class="home-sub">Добро пожаловать!</div>
+    </div>
+    <div class="streak-badge">
+      <span class="streak-fire">🔥</span>
+      <div>
+        <div class="streak-num" id="streak-num">0</div>
+        <div class="streak-lbl">дней</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">Темы</div>
+
+  <div class="topic-card" onclick="openTopic(0)">
+    <div class="topic-icon green">👋</div>
+    <div class="topic-info">
+      <div class="topic-name">Как здороваются сербы</div>
+      <div class="topic-meta">20 фраз · сбор фразы + выбор перевода</div>
+      <div class="topic-progress-bar"><div class="topic-progress-fill" id="prog-0" style="width:0%"></div></div>
+    </div>
+    <div class="topic-arrow">›</div>
+  </div>
+
+  <div class="topic-card" onclick="openTopic(1)">
+    <div class="topic-icon orange">📚</div>
+    <div class="topic-info">
+      <div class="topic-name">Глагол jesam (есть)</div>
+      <div class="topic-meta">Теория + выбор формы + вставить слово</div>
+      <div class="topic-progress-bar"><div class="topic-progress-fill" id="prog-1" style="width:0%"></div></div>
+    </div>
+    <div class="topic-arrow">›</div>
+  </div>
+
+  <div class="tip-box mt1">
+    <strong>Как пользоваться:</strong> скидывай преподавателю скрины из Miro — новые темы появятся здесь.
+  </div>
+</div>
+
+<!-- THEORY: jesam -->
+<div id="s-theory" class="screen">
+  <div class="theory-header">
+    <button class="back-btn" onclick="goHome()">← Назад</button>
+    <div class="theory-title">Глагол jesam</div>
+  </div>
+  <div class="theory-body">
+    <h2>Glagol «jesam» — глагол «есть»</h2>
+    <p>Используем, когда хотим:</p>
+    <ul>
+      <li>Сказать имя, профессию, национальность</li>
+      <li>Рассказать о местонахождении</li>
+      <li>Описать себя или состояние</li>
+      <li>Рассказать, откуда вы</li>
+      <li>Спросить «Как дела?»</li>
+    </ul>
+
+    <h3>Утвердительная форма</h3>
+    <table class="conj-table">
+      <tr><td>Ja (я)</td><td><span class="theory-badge">sam</span></td><td></td><td>Ja sam na poslu.</td></tr>
+      <tr><td>Ti (ты)</td><td><span class="theory-badge">si</span></td><td></td><td>Ti si na poslu.</td></tr>
+      <tr><td>On/ona/ono</td><td><span class="theory-badge">je</span></td><td></td><td>On je na poslu.</td></tr>
+      <tr><td>Mi (мы)</td><td><span class="theory-badge">smo</span></td><td></td><td>Mi smo na poslu.</td></tr>
+      <tr><td>Vi (вы)</td><td><span class="theory-badge">ste</span></td><td></td><td>Vi ste na poslu.</td></tr>
+      <tr><td>Oni/one/ona</td><td><span class="theory-badge">su</span></td><td></td><td>Oni su na poslu.</td></tr>
+    </table>
+
+    <h3>Отрицательная форма — частица «ni» перед глаголом</h3>
+    <table class="conj-table">
+      <tr><td>Ja</td><td><span class="theory-badge neg">nisam</span></td><td></td><td>Ja nisam kod kuće.</td></tr>
+      <tr><td>Ti</td><td><span class="theory-badge neg">nisi</span></td><td></td><td>Ti nisi Ruskinja.</td></tr>
+      <tr><td>On/ona/ono</td><td><span class="theory-badge neg">nije</span></td><td></td><td>On nije profesor.</td></tr>
+      <tr><td>Mi</td><td><span class="theory-badge neg">nismo</span></td><td></td><td>Mi nismo iz Crne Gore.</td></tr>
+      <tr><td>Vi</td><td><span class="theory-badge neg">niste</span></td><td></td><td>Vi niste kod kuće.</td></tr>
+      <tr><td>Oni/one/ona</td><td><span class="theory-badge neg">nisu</span></td><td></td><td>Oni nisu menadžeri.</td></tr>
+    </table>
+
+    <h3>Полезные слова</h3>
+    <p><strong>Posao</strong> — работа &nbsp;·&nbsp; <strong>Na poslu</strong> — на работе &nbsp;·&nbsp; <strong>Kod kuće</strong> — дома</p>
+  </div>
+  <button class="start-practice-btn" onclick="startTopic(1)">Начать практику →</button>
+</div>
+
+<!-- TASK -->
+<div id="s-task" class="screen">
+  <div class="task-header">
+    <button class="back-btn" onclick="goHome()">←</button>
+    <div class="progress-bar"><div class="progress-fill" id="pfill" style="width:0%"></div></div>
+    <div class="task-count" id="task-count">1/10</div>
+  </div>
+  <div id="task-area"></div>
+  <div class="feedback-box" id="fb"></div>
+  <button class="check-btn" id="check-btn" onclick="checkAnswer()">Проверить</button>
+  <button class="next-btn" id="next-btn" style="display:none" onclick="nextTask()">Далее →</button>
+</div>
+
+<!-- DONE -->
+<div id="s-done" class="screen">
+  <div class="done-wrap">
+    <div class="done-emoji">🎉</div>
+    <div class="done-title">Тема пройдена!</div>
+    <div class="done-sub" id="done-topic-name"></div>
+    <div class="score-row">
+      <div class="score-card"><div class="score-num" id="d-ok">0</div><div class="score-lbl">верно</div></div>
+      <div class="score-card"><div class="score-num" id="d-err">0</div><div class="score-lbl">ошибок</div></div>
+      <div class="score-card"><div class="score-num" id="d-pct">0%</div><div class="score-lbl">результат</div></div>
+    </div>
+    <div class="done-btns">
+      <button class="check-btn" onclick="goHome()">На главную</button>
+      <button class="next-btn" onclick="restartTopic()">Повторить тему</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- /app -->
+
+<script>
+// ── DATA ──────────────────────────────────────────
+const TOPICS = [
+  {
+    id: 0,
+    name: "Как здороваются сербы",
+    type: "phrases",
+    phrases: [
+      {sr:"Kako si / ste?", ru:"Как ты / вы?"},
+      {sr:"Gde si?", ru:"Где ты?"},
+      {sr:"Šta ima (novo)?", ru:"Что нового?"},
+      {sr:"Šta radiš?", ru:"Что делаешь? / Как дела?"},
+      {sr:"Kako ide?", ru:"Как жизнь? / Как дела?"},
+      {sr:"Izvoli / te!", ru:"Пожалуйста."},
+      {sr:"Molim.", ru:"Алло? / Что? / Пожалуйста."},
+      {sr:"Izvini / te!", ru:"Извини / те!"},
+      {sr:"Izvinite, samo malo.", ru:"Извините, дайте пройти."},
+      {sr:"Evo, ništa.", ru:"Да вот, ничего."},
+      {sr:"Ništa posebno.", ru:"Ничего особенного."},
+      {sr:"Dobro, hvala.", ru:"Хорошо, спасибо."},
+      {sr:"Nije loše.", ru:"Неплохо."},
+      {sr:"Može bolje.", ru:"Может быть и лучше."},
+      {sr:"Ima svašta.", ru:"Есть много всего разного."},
+      {sr:"Hvala ti / vam.", ru:"Спасибо."},
+      {sr:"Hvala lepo / puno.", ru:"Спасибо большое."},
+      {sr:"Nema na čemu.", ru:"Не за что."},
+      {sr:"Vidimo se!", ru:"Увидимся!"},
+      {sr:"Doviđenja!", ru:"До свидания!"},
+    ]
+  },
+  {
+    id: 1,
+    name: "Глагол jesam (есть)",
+    type: "jesam",
+    hasTheory: true,
+    // choose: выбор правильной формы (из 3 вариантов)
+    choose: [
+      {sentence:"Ja ___ Srpkinja.", opts:["sam","si","su"], answer:"sam"},
+      {sentence:"Ti ___ veoma lepa.", opts:["ste","si","je"], answer:"si"},
+      {sentence:"Odakle ___ vi?", opts:["su","sam","ste"], answer:"ste"},
+      {sentence:"Kako ___, Tanja?", opts:["si","smo","nisi"], answer:"si"},
+      {sentence:"Ovo ___ moj brat.", opts:["je","nisi","nisu"], answer:"je"},
+      {sentence:"Ovo pivo ___ ukusno i hladno.", opts:["je","sam","si"], answer:"je"},
+      {sentence:"Mi ___ iz Rusije.", opts:["smo","nisu","je"], answer:"smo"},
+      {sentence:"Oni ___ moji prijatelji.", opts:["nisu","je","sam"], answer:"nisu"},
+      {sentence:"Ti ___ pevačica.", opts:["si","smo","nisi"], answer:"si"},
+      {sentence:"Ti ___ glumica.", opts:["nisi","nismo","si"], answer:"nisi"},
+      {sentence:"Oni ___ kod kuće.", opts:["su","je","nije"], answer:"su"},
+      {sentence:"Ovo ___ pas.", opts:["je","nisi","nisu"], answer:"je"},
+      {sentence:"On ___ mačka.", opts:["nije","je","sam"], answer:"nije"},
+    ],
+    // fill: вставить правильную форму из банка
+    fill: [
+      {sentence:"Ja ___ Sara.", bank:["sam","si","je","smo","ste","su"], answer:"sam"},
+      {sentence:"Vi ___ Boris i Tanja.", bank:["sam","si","je","smo","ste","su"], answer:"ste"},
+      {sentence:"Ti ___ dobar drug.", bank:["sam","si","je","smo","ste","su"], answer:"si"},
+      {sentence:"Oni ___ brat i sestra.", bank:["sam","si","je","smo","ste","su"], answer:"su"},
+      {sentence:"On ___ moj drug.", bank:["sam","si","je","smo","ste","su"], answer:"je"},
+      {sentence:"Mi ___ Sara i Miloš.", bank:["sam","si","je","smo","ste","su"], answer:"smo"},
+      {sentence:"Sara ___ moja sestra.", bank:["nisam","nisi","nije","nismo","niste","nisu"], answer:"nije"},
+      {sentence:"Ja ___ Milica.", bank:["nisam","nisi","nije","nismo","niste","nisu"], answer:"nisam"},
+      {sentence:"Oni ___ Milica i Boris.", bank:["nisam","nisi","nije","nismo","niste","nisu"], answer:"nisu"},
+      {sentence:"Vi ___ brat i sestra.", bank:["nisam","nisi","nije","nismo","niste","nisu"], answer:"niste"},
+      {sentence:"Mi ___ dobro.", bank:["nisam","nisi","nije","nismo","niste","nisu"], answer:"nismo"},
+      {sentence:"Ti ___ loše.", bank:["nisam","nisi","nije","nismo","niste","nisu"], answer:"nisi"},
+    ]
+  }
+];
+
+// ── STATE ──────────────────────────────────────────
+let curTopic = 0, tasks = [], cur = 0, okCount = 0, errCount = 0, answered = false;
+let built = [], usedIdx = [];
+
+// ── STORAGE ──────────────────────────────────────
+function saveProgress(topicId, pct) {
+  const data = JSON.parse(localStorage.getItem('sr_progress') || '{}');
+  data[topicId] = Math.max(data[topicId] || 0, pct);
+  localStorage.setItem('sr_progress', JSON.stringify(data));
+}
+function getProgress(topicId) {
+  const data = JSON.parse(localStorage.getItem('sr_progress') || '{}');
+  return data[topicId] || 0;
+}
+function updateStreak() {
+  const today = new Date().toDateString();
+  const data = JSON.parse(localStorage.getItem('sr_streak') || '{"days":0,"last":""}');
+  const yesterday = new Date(Date.now() - 86400000).toDateString();
+  if (data.last === today) return data.days;
+  if (data.last === yesterday) data.days++;
+  else if (data.last !== today) data.days = 1;
+  data.last = today;
+  localStorage.setItem('sr_streak', JSON.stringify(data));
+  return data.days;
+}
+function getStreak() {
+  const data = JSON.parse(localStorage.getItem('sr_streak') || '{"days":0,"last":""}');
+  return data.days;
+}
+
+// ── SCREENS ──────────────────────────────────────
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+function goHome() {
+  updateProgressBars();
+  document.getElementById('streak-num').textContent = getStreak();
+  show('s-home');
+}
+function updateProgressBars() {
+  TOPICS.forEach(t => {
+    const el = document.getElementById('prog-' + t.id);
+    if (el) el.style.width = getProgress(t.id) + '%';
+  });
+}
+
+// ── OPEN TOPIC ───────────────────────────────────
+function openTopic(id) {
+  curTopic = id;
+  const t = TOPICS[id];
+  if (t.hasTheory) { show('s-theory'); return; }
+  startTopic(id);
+}
+
+function startTopic(id) {
+  curTopic = id;
+  tasks = buildTasks(id);
+  cur = 0; okCount = 0; errCount = 0;
+  show('s-task');
+  renderTask();
+}
+
+function restartTopic() { startTopic(curTopic); }
+
+// ── BUILD TASKS ───────────────────────────────────
+function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
+
+function buildTasks(id) {
+  const t = TOPICS[id];
+  if (t.type === 'phrases') {
+    return shuffle(t.phrases).map((p, i) => {
+      if (i % 2 === 0) {
+        return { type:'sentence', sr:p.sr, ru:p.ru, words:shuffle(p.sr.split(' ')) };
+      } else {
+        const others = t.phrases.filter(x => x.sr !== p.sr);
+        const wrong = shuffle(others).slice(0, 2).map(x => x.ru);
+        const opts = shuffle([p.ru, ...wrong]);
+        return { type:'mc', sr:p.sr, ru:p.ru, opts, answer:opts.indexOf(p.ru) };
+      }
+    });
+  }
+  if (t.type === 'jesam') {
+    const chooseTasks = shuffle(t.choose).map(c => ({
+      type: 'choose',
+      sentence: c.sentence,
+      opts: shuffle(c.opts),
+      answer: c.answer
+    }));
+    const fillTasks = shuffle(t.fill).map(f => ({
+      type: 'fill',
+      sentence: f.sentence,
+      bank: shuffle(f.bank),
+      answer: f.answer
+    }));
+    return shuffle([...chooseTasks, ...fillTasks]);
+  }
+  return [];
+}
+
+// ── RENDER TASK ───────────────────────────────────
+function renderTask() {
+  answered = false; built = []; usedIdx = [];
+  const t = tasks[cur];
+  const pct = Math.round((cur / tasks.length) * 100);
+  document.getElementById('pfill').style.width = pct + '%';
+  document.getElementById('task-count').textContent = (cur + 1) + '/' + tasks.length;
+  document.getElementById('fb').className = 'feedback-box';
+  document.getElementById('fb').textContent = '';
+  document.getElementById('next-btn').style.display = 'none';
+  const cb = document.getElementById('check-btn');
+  cb.style.display = ''; cb.disabled = false; cb.textContent = 'Проверить'; cb.onclick = checkAnswer;
+
+  const area = document.getElementById('task-area');
+
+  if (t.type === 'mc') {
+    cb.style.display = 'none';
+    area.innerHTML = `
+      <div class="task-type-pill">Выбери перевод</div>
+      <div class="task-card">
+        <div class="task-question">${t.sr}</div>
+        <div class="opts">${t.opts.map((o,i) => `<button class="opt" onclick="pickMC(this,${i},${t.answer})">${o}</button>`).join('')}</div>
+      </div>`;
+  } else if (t.type === 'sentence') {
+    area.innerHTML = `
+      <div class="task-type-pill orange">Собери фразу</div>
+      <div class="task-card">
+        <div class="task-question">${t.ru}</div>
+        <div class="sent-display" id="sa" onclick="removeWord()">нажимай слова ниже →</div>
+        <div class="sent-hint">нажми на собранное, чтобы убрать последнее слово</div>
+        <div class="word-bank">${t.words.map((w,i) => `<button class="chip" id="ch${i}" onclick="addWord('${w}',${i})">${w}</button>`).join('')}</div>
+      </div>`;
+  } else if (t.type === 'choose') {
+    cb.style.display = 'none';
+    const parts = t.sentence.split('___');
+    area.innerHTML = `
+      <div class="task-type-pill">Выбери форму глагола</div>
+      <div class="task-card">
+        <div class="task-question">${parts[0]}<span class="blank">___</span>${parts[1]}</div>
+        <div class="opts">${t.opts.map((o,i) => `<button class="opt" onclick="pickChoose(this,'${o}','${t.answer}')">${o}</button>`).join('')}</div>
+      </div>`;
+  } else if (t.type === 'fill') {
+    const parts = t.sentence.split('___');
+    area.innerHTML = `
+      <div class="task-type-pill orange">Вставь слово</div>
+      <div class="task-card">
+        <div class="task-question">${parts[0]}<span class="blank">___</span>${parts[1]}</div>
+        <div class="word-bank" style="margin-bottom:0.75rem">${t.bank.map(w => `<button class="chip" id="chip-${w}" onclick="pickFill('${w}','${t.answer}')">${w}</button>`).join('')}</div>
+      </div>`;
+    cb.style.display = 'none';
+  }
+}
+
+// ── INTERACTIONS ──────────────────────────────────
+function pickMC(btn, idx, correctIdx) {
+  if (answered) return;
+  answered = true;
+  const allBtns = document.querySelectorAll('.opt');
+  allBtns.forEach(b => b.disabled = true);
+  if (idx === correctIdx) {
+    btn.classList.add('correct');
+    okCount++;
+    showFb(true, 'Правильно!');
+  } else {
+    btn.classList.add('wrong');
+    allBtns[correctIdx].classList.add('correct');
+    errCount++;
+    showFb(false, 'Неправильно — правильный ответ выделен зелёным.');
+  }
+  const cb = document.getElementById('check-btn');
+  cb.style.display = ''; cb.textContent = 'Далее →'; cb.onclick = nextTask;
+}
+
+function pickChoose(btn, val, correct) {
+  if (answered) return;
+  answered = true;
+  const allBtns = document.querySelectorAll('.opt');
+  allBtns.forEach(b => b.disabled = true);
+  if (val === correct) {
+    btn.classList.add('correct');
+    okCount++;
+    showFb(true, 'Правильно!');
+  } else {
+    btn.classList.add('wrong');
+    allBtns.forEach(b => { if (b.textContent === correct) b.classList.add('correct'); });
+    errCount++;
+    showFb(false, `Неправильно — правильный ответ: «${correct}»`);
+  }
+  const cb = document.getElementById('check-btn');
+  cb.style.display = ''; cb.textContent = 'Далее →'; cb.onclick = nextTask;
+}
+
+function pickFill(val, correct) {
+  if (answered) return;
+  answered = true;
+  document.querySelectorAll('.chip').forEach(c => c.disabled = true);
+  const parts = tasks[cur].sentence.split('___');
+  const blankEl = document.querySelector('.blank');
+  blankEl.textContent = val;
+  if (val === correct) {
+    blankEl.style.color = 'var(--primary)';
+    okCount++;
+    showFb(true, 'Правильно!');
+  } else {
+    blankEl.textContent = val;
+    blankEl.style.color = 'var(--wrong)';
+    document.getElementById('chip-' + correct).style.background = 'var(--primary-pale)';
+    document.getElementById('chip-' + correct).style.borderColor = 'var(--primary-light)';
+    document.getElementById('chip-' + correct).style.color = 'var(--primary)';
+    errCount++;
+    showFb(false, `Неправильно — правильный ответ: «${correct}»`);
+  }
+  const cb = document.getElementById('check-btn');
+  cb.style.display = ''; cb.textContent = 'Далее →'; cb.onclick = nextTask;
+}
+
+function addWord(w, i) {
+  if (answered) return;
+  built.push(w); usedIdx.push(i);
+  document.getElementById('ch' + i).classList.add('used');
+  document.getElementById('sa').textContent = built.join(' ');
+}
+
+function removeWord() {
+  if (answered || built.length === 0) return;
+  built.pop();
+  const last = usedIdx.pop();
+  document.getElementById('ch' + last).classList.remove('used');
+  const sa = document.getElementById('sa');
+  sa.textContent = built.length ? built.join(' ') : 'нажимай слова ниже →';
+}
+
+function checkAnswer() {
+  if (answered) return;
+  const t = tasks[cur];
+  if (t.type === 'sentence') {
+    const ok = built.join(' ') === t.sr;
+    document.getElementById('sa').classList.add(ok ? 'correct' : 'wrong');
+    if (ok) { okCount++; showFb(true, 'Правильно!'); }
+    else { errCount++; showFb(false, `Правильно: «${t.sr}»`); }
+    answered = true;
+    const cb = document.getElementById('check-btn');
+    cb.textContent = 'Далее →'; cb.onclick = nextTask;
+  }
+}
+
+function showFb(ok, msg) {
+  const f = document.getElementById('fb');
+  f.textContent = msg;
+  f.className = 'feedback-box show ' + (ok ? 'ok' : 'err');
+}
+
+function nextTask() {
+  cur++;
+  if (cur >= tasks.length) { showDone(); return; }
+  renderTask();
+}
+
+function showDone() {
+  updateStreak();
+  const total = okCount + errCount;
+  const pct = total ? Math.round(okCount / total * 100) : 0;
+  saveProgress(curTopic, pct);
+  document.getElementById('d-ok').textContent = okCount;
+  document.getElementById('d-err').textContent = errCount;
+  document.getElementById('d-pct').textContent = pct + '%';
+  document.getElementById('done-topic-name').textContent = TOPICS[curTopic].name;
+  show('s-done');
+}
+
+// ── INIT ──────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('streak-num').textContent = getStreak();
+  updateProgressBars();
+});
+</script>
+</body>
+</html>
