@@ -125,7 +125,7 @@ export default function CourseHome({ topics }) {
     <div className="min-h-screen bg-gray-10">
       <div className="max-w-lg mx-auto">
 
-        <header className="px-4 pt-12 pb-6">
+        <header className="px-4 pt-6 pb-6">
           <div className="flex items-baseline justify-between mb-1">
             <h1 className="text-2xl font-semibold text-gray-100 tracking-tight">
               Srpski jezik

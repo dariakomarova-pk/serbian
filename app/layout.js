@@ -1,5 +1,7 @@
 import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
+import AppHeader from '@/components/AppHeader'
+import TabBar from '@/components/TabBar'
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ['latin', 'cyrillic'],
@@ -24,7 +26,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ru">
       <body className={`${ibmPlexSans.variable} ${ibmPlexMono.variable} font-sans antialiased`}>
-        {children}
+        <AppHeader />
+        <main className="pt-12 pb-16 min-h-screen">
+          {children}
+        </main>
+        <TabBar />
       </body>
     </html>
   )
