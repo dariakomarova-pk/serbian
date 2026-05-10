@@ -31,7 +31,7 @@
           { "latin": "V v", "sound": "в", "example": "voda" },
           { "latin": "G g", "sound": "г", "example": "grad" },
           { "latin": "D d", "sound": "д", "example": "doktor" },
-          { "latin": "Đ đ", "sound": "дь (мягкое)", "example": "đak", "isNew": true },
+          { "latin": "Đ đ", "sound": "дьжь (мягкое)", "example": "đak", "isNew": true },
           { "latin": "E e", "sound": "э", "example": "ekser", "isNew": true },
           { "latin": "Ž ž", "sound": "ж", "example": "život" },
           { "latin": "Z z", "sound": "з", "example": "zemlja" },
@@ -63,8 +63,8 @@
         "letters": [
           {
             "latin": "Đ đ",
-            "sound": "дь",
-            "transcription": "дь (мягкое дж)",
+            "sound": "дьжь",
+            "transcription": "дьжь (мягкое)",
             "examples": ["đak — уче́ник", "đevrek — бу́блик"]
           },
           {
@@ -139,8 +139,8 @@
             },
             {
               "question": "Đ đ",
-              "options": ["д", "дж", "дь", "з"],
-              "answer": "дь"
+              "options": ["д", "дж", "дьжь", "з"],
+              "answer": "дьжь"
             },
             {
               "question": "Lj lj",
@@ -154,7 +154,7 @@
             },
             {
               "question": "Dž dž",
-              "options": ["дь", "дж", "ж", "з"],
+              "options": ["дьжь", "дж", "ж", "з"],
               "answer": "дж"
             }
           ]
