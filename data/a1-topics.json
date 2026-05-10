@@ -1,0 +1,117 @@
+{
+  "level": "A1",
+  "topics": [
+    {
+      "id": "01-alfabet",
+      "order": 1,
+      "title": "Alfabet i izgovor",
+      "titleRu": "Алфавит и произношение",
+      "lessonsTotal": 2,
+      "isUnlocked": true
+    },
+    {
+      "id": "02-pozdravi",
+      "order": 2,
+      "title": "Pozdravi i upoznavanje",
+      "titleRu": "Приветствия и знакомство",
+      "lessonsTotal": 4,
+      "isUnlocked": false
+    },
+    {
+      "id": "03-porodica",
+      "order": 3,
+      "title": "Porodica",
+      "titleRu": "Семья",
+      "lessonsTotal": 4,
+      "isUnlocked": false
+    },
+    {
+      "id": "04-profesije",
+      "order": 4,
+      "title": "Profesije",
+      "titleRu": "Профессии",
+      "lessonsTotal": 3,
+      "isUnlocked": false
+    },
+    {
+      "id": "05-brojevi",
+      "order": 5,
+      "title": "Brojevi i godišnja doba",
+      "titleRu": "Числа и времена года",
+      "lessonsTotal": 5,
+      "isUnlocked": false
+    },
+    {
+      "id": "06-zemlje",
+      "order": 6,
+      "title": "Zemlje i nacionalnosti",
+      "titleRu": "Страны и национальности",
+      "lessonsTotal": 3,
+      "isUnlocked": false
+    },
+    {
+      "id": "07-restoran",
+      "order": 7,
+      "title": "U restoranu i kafani",
+      "titleRu": "В ресторане и кафане",
+      "lessonsTotal": 5,
+      "isUnlocked": false
+    },
+    {
+      "id": "08-grad",
+      "order": 8,
+      "title": "Kretanje po gradu",
+      "titleRu": "Передвижение по городу",
+      "lessonsTotal": 5,
+      "isUnlocked": false
+    },
+    {
+      "id": "09-putovanja",
+      "order": 9,
+      "title": "Putovanja",
+      "titleRu": "Путешествия",
+      "lessonsTotal": 4,
+      "isUnlocked": false
+    },
+    {
+      "id": "10-dom",
+      "order": 10,
+      "title": "Dom i svakodnevica",
+      "titleRu": "Дом и быт",
+      "lessonsTotal": 5,
+      "isUnlocked": false
+    },
+    {
+      "id": "11-slobodno-vreme",
+      "order": 11,
+      "title": "Slobodno vreme i hobiji",
+      "titleRu": "Досуг и хобби",
+      "lessonsTotal": 4,
+      "isUnlocked": false
+    },
+    {
+      "id": "12-prodavnica",
+      "order": 12,
+      "title": "U prodavnici",
+      "titleRu": "В магазине",
+      "lessonsTotal": 4,
+      "isUnlocked": false
+    },
+    {
+      "id": "13-posao",
+      "order": 13,
+      "title": "Posao i škola",
+      "titleRu": "Работа и учёба",
+      "lessonsTotal": 4,
+      "isUnlocked": false
+    },
+    {
+      "id": "14-kupovina",
+      "order": 14,
+      "title": "Kupovina i cene",
+      "titleRu": "Покупки и цены",
+      "lessonsTotal": 4,
+      "isUnlocked": false
+    }
+  ]
+}

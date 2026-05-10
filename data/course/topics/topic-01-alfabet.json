@@ -1,0 +1,466 @@
+{
+  "id": "01-alfabet",
+  "title": "Alfabet i izgovor",
+  "titleRu": "Алфавит и произношение",
+  "level": "A1",
+  "order": 1,
+  "cultureNote": {
+    "title": "Vuk Stefanović Karadžić",
+    "titleRu": "Вук Стефанович Караджич",
+    "text": "Vuk Karadžić je reformisao srpski jezik u 19. veku. Njegovo pravilo je jednostavno: piši kao što govoriš, čitaj kao što je napisano.",
+    "textRu": "Вук Караджич реформировал сербский язык в XIX веке. Его правило простое: пиши как говоришь, читай как написано. Благодаря ему сербский — один из самых фонетически точных языков в мире.",
+    "keyWord": "pravilo",
+    "keyWordTranslation": "правило"
+  },
+  "lessons": [
+    {
+      "id": "01-alfabet-lesson-01",
+      "order": 1,
+      "title": "Pravilo i alfabet",
+      "titleRu": "Правило Вука и алфавит",
+      "grammar": {
+        "title": "Правило Вука Караджича",
+        "explanation": "Главное правило сербского языка: одна буква = один звук. Пиши как говоришь, читай как написано — Piši kao što govoriš, čitaj kao što je napisano.\n\nЭто значит:\n• Гласные не проглатываются: do-go-vor, o-brok\n• Нет обезвучивания в конце слова: sneg, ljubav (читай звонко)\n• Буква «е» читается как русское «э»: sneg, ne, biblioteka\n• Буква «и» не смягчает предыдущую согласную как в русском: nisam, prodavnica",
+        "keyRule": "Piši kao što govoriš, čitaj kao što je napisano."
+      },
+      "alphabet": {
+        "note": "Сербский алфавит — 30 букв. Выделенные буквы — новые для русскоязычных.",
+        "letters": [
+          { "latin": "A a", "sound": "а", "example": "auto" },
+          { "latin": "B b", "sound": "б", "example": "banka" },
+          { "latin": "V v", "sound": "в", "example": "voda" },
+          { "latin": "G g", "sound": "г", "example": "grad" },
+          { "latin": "D d", "sound": "д", "example": "doktor" },
+          { "latin": "Đ đ", "sound": "дь (мягкое)", "example": "đak", "isNew": true },
+          { "latin": "E e", "sound": "э", "example": "ekser", "isNew": true },
+          { "latin": "Ž ž", "sound": "ж", "example": "život" },
+          { "latin": "Z z", "sound": "з", "example": "zemlja" },
+          { "latin": "I i", "sound": "и (не смягчает)", "example": "ime", "isNew": true },
+          { "latin": "J j", "sound": "й", "example": "jabuka", "isNew": true },
+          { "latin": "K k", "sound": "к", "example": "kafa" },
+          { "latin": "L l", "sound": "л", "example": "lep" },
+          { "latin": "Lj lj", "sound": "ль", "example": "ljubav", "isNew": true },
+          { "latin": "M m", "sound": "м", "example": "mama" },
+          { "latin": "N n", "sound": "н", "example": "nos" },
+          { "latin": "Nj nj", "sound": "нь", "example": "njegov", "isNew": true },
+          { "latin": "O o", "sound": "о", "example": "oko" },
+          { "latin": "P p", "sound": "п", "example": "prijatelj" },
+          { "latin": "R r", "sound": "р", "example": "reka" },
+          { "latin": "S s", "sound": "с", "example": "sin" },
+          { "latin": "T t", "sound": "т", "example": "tata" },
+          { "latin": "Ć ć", "sound": "чь (мягкое)", "example": "ćelav", "isNew": true },
+          { "latin": "U u", "sound": "у", "example": "ulica" },
+          { "latin": "F f", "sound": "ф", "example": "film" },
+          { "latin": "H h", "sound": "х", "example": "hleb" },
+          { "latin": "C c", "sound": "ц", "example": "cena" },
+          { "latin": "Č č", "sound": "ч (твёрдое)", "example": "čovek", "isNew": true },
+          { "latin": "Dž dž", "sound": "дж (твёрдое)", "example": "džak", "isNew": true },
+          { "latin": "Š š", "sound": "ш", "example": "škola", "isNew": true }
+        ]
+      },
+      "specialLetters": {
+        "note": "Эти буквы встречаются только в сербском — обрати на них особое внимание.",
+        "letters": [
+          {
+            "latin": "Đ đ",
+            "sound": "дь",
+            "transcription": "дь (мягкое дж)",
+            "examples": ["đak — уче́ник", "đevrek — бу́блик"]
+          },
+          {
+            "latin": "Dž dž",
+            "sound": "дж",
+            "transcription": "дж (твёрдое)",
+            "examples": ["džak — мешо́к", "džezva — джезва́"]
+          },
+          {
+            "latin": "Lj lj",
+            "sound": "ль",
+            "transcription": "ль (мягкое л)",
+            "examples": ["ljubav — любо́вь", "prijatelj — дру́г"]
+          },
+          {
+            "latin": "Nj nj",
+            "sound": "нь",
+            "transcription": "нь (мягкое н)",
+            "examples": ["njegov — его́", "njena — её"]
+          },
+          {
+            "latin": "Ć ć",
+            "sound": "чь",
+            "transcription": "чь (мягкое ч)",
+            "examples": ["ćelav — лысый", "noć — ночь"]
+          },
+          {
+            "latin": "Č č",
+            "sound": "ч",
+            "transcription": "ч (твёрдое)",
+            "examples": ["čovek — челове́к", "čekić — молото́к"]
+          },
+          {
+            "latin": "Š š",
+            "sound": "ш",
+            "transcription": "ш",
+            "examples": ["škola — шко́ла", "ššest — шесть"]
+          },
+          {
+            "latin": "J j",
+            "sound": "й",
+            "transcription": "й",
+            "examples": ["jabuka — я́блоко", "jagoda — клубни́ка"]
+          }
+        ]
+      },
+      "exercises": [
+        {
+          "id": "ex-01-01-01",
+          "type": "multiple_choice",
+          "instruction": "Какой звук обозначает эта буква?",
+          "questions": [
+            {
+              "question": "Š š",
+              "options": ["ш", "с", "щ", "х"],
+              "answer": "ш"
+            },
+            {
+              "question": "J j",
+              "options": ["дж", "й", "и", "ж"],
+              "answer": "й"
+            },
+            {
+              "question": "Č č",
+              "options": ["чь", "ц", "ч", "щ"],
+              "answer": "ч"
+            },
+            {
+              "question": "Ć ć",
+              "options": ["ч", "чь", "ц", "дж"],
+              "answer": "чь"
+            },
+            {
+              "question": "Đ đ",
+              "options": ["д", "дж", "дь", "з"],
+              "answer": "дь"
+            },
+            {
+              "question": "Lj lj",
+              "options": ["л", "ль", "й", "лй"],
+              "answer": "ль"
+            },
+            {
+              "question": "Nj nj",
+              "options": ["н", "нж", "нь", "й"],
+              "answer": "нь"
+            },
+            {
+              "question": "Dž dž",
+              "options": ["дь", "дж", "ж", "з"],
+              "answer": "дж"
+            }
+          ]
+        },
+        {
+          "id": "ex-01-01-02",
+          "type": "multiple_choice",
+          "instruction": "Как читается это слово по-русски?",
+          "questions": [
+            {
+              "question": "škola",
+              "options": ["скола", "шкóла", "эшкола", "схола"],
+              "answer": "шкóла"
+            },
+            {
+              "question": "džezva",
+              "options": ["дезва", "жезва", "джезва́", "дзезва"],
+              "answer": "джезва́"
+            },
+            {
+              "question": "ljubav",
+              "options": ["лубав", "люба́в", "лйубав", "йубав"],
+              "answer": "люба́в"
+            },
+            {
+              "question": "jabuka",
+              "options": ["абука", "жабука", "я́бука", "иабука"],
+              "answer": "я́бука"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "01-alfabet-lesson-02",
+      "order": 2,
+      "title": "Reči i akcenat",
+      "titleRu": "Слова и ударение",
+      "note": "Эти слова похожи на русские — ты уже почти знаешь их. Обрати внимание на ударение: оно обозначено жирной гласной.",
+      "vocabulary": [
+        {
+          "word": "škola",
+          "stress": "škóla",
+          "transcription": "шко́ла",
+          "translation": "школа",
+          "emoji": "🏫"
+        },
+        {
+          "word": "biblioteka",
+          "stress": "bibliotéka",
+          "transcription": "библиоте́ка",
+          "translation": "библиотека",
+          "emoji": "📚"
+        },
+        {
+          "word": "hleb",
+          "stress": "hleb",
+          "transcription": "хлеб",
+          "translation": "хлеб",
+          "emoji": "🍞"
+        },
+        {
+          "word": "mama",
+          "stress": "máma",
+          "transcription": "ма́ма",
+          "translation": "мама",
+          "emoji": "👩"
+        },
+        {
+          "word": "student",
+          "stress": "studént",
+          "transcription": "студе́нт",
+          "translation": "студент",
+          "emoji": "👨‍🎓"
+        },
+        {
+          "word": "profesor",
+          "stress": "proféssor",
+          "transcription": "профе́сор",
+          "translation": "профессор",
+          "emoji": "👨‍🏫"
+        },
+        {
+          "word": "telefon",
+          "stress": "telefón",
+          "transcription": "телефо́н",
+          "translation": "телефон",
+          "emoji": "📱"
+        },
+        {
+          "word": "restoran",
+          "stress": "restóran",
+          "transcription": "ресто́ран",
+          "translation": "ресторан",
+          "emoji": "🍽️"
+        },
+        {
+          "word": "banka",
+          "stress": "bánka",
+          "transcription": "ба́нка",
+          "translation": "банк",
+          "emoji": "🏦"
+        },
+        {
+          "word": "autobus",
+          "stress": "autóbus",
+          "transcription": "авто́бус",
+          "translation": "автобус",
+          "emoji": "🚌"
+        },
+        {
+          "word": "doktor",
+          "stress": "dóktor",
+          "transcription": "до́ктор",
+          "translation": "доктор",
+          "emoji": "👨‍⚕️"
+        },
+        {
+          "word": "muzika",
+          "stress": "múzika",
+          "transcription": "му́зыка",
+          "translation": "музыка",
+          "emoji": "🎵"
+        },
+        {
+          "word": "film",
+          "stress": "film",
+          "transcription": "фильм",
+          "translation": "фильм",
+          "emoji": "🎬"
+        },
+        {
+          "word": "hotel",
+          "stress": "hotél",
+          "transcription": "хоте́ль",
+          "translation": "отель",
+          "emoji": "🏨"
+        }
+      ],
+      "exercises": [
+        {
+          "id": "ex-01-02-01",
+          "type": "match_pairs",
+          "instruction": "Соедини сербское слово с русским переводом.",
+          "pairs": [
+            { "serbian": "škola", "russian": "школа" },
+            { "serbian": "telefon", "russian": "телефон" },
+            { "serbian": "restoran", "russian": "ресторан" },
+            { "serbian": "banka", "russian": "банк" },
+            { "serbian": "doktor", "russian": "доктор" },
+            { "serbian": "muzika", "russian": "музыка" }
+          ]
+        },
+        {
+          "id": "ex-01-02-02",
+          "type": "match_pairs_emoji",
+          "instruction": "Соедини эмодзи с сербским словом.",
+          "pairs": [
+            { "emoji": "🚌", "serbian": "autobus" },
+            { "emoji": "📚", "serbian": "biblioteka" },
+            { "emoji": "🍞", "serbian": "hleb" },
+            { "emoji": "🎬", "serbian": "film" },
+            { "emoji": "🏨", "serbian": "hotel" },
+            { "emoji": "👨‍🎓", "serbian": "student" }
+          ]
+        },
+        {
+          "id": "ex-01-02-03",
+          "type": "multiple_choice",
+          "instruction": "Где стоит ударение в этом слове?",
+          "questions": [
+            {
+              "question": "telefon",
+              "options": ["téLEfon", "teLEfon", "teleFÓN", "TELefon"],
+              "answer": "teleFÓN",
+              "hint": "телефо́н"
+            },
+            {
+              "question": "muzika",
+              "options": ["muZIka", "MUzika", "muziKA"],
+              "answer": "MUzika",
+              "hint": "му́зыка"
+            },
+            {
+              "question": "biblioteka",
+              "options": ["BIblioteka", "biBLIOteka", "bibliotEka", "bibliotekA"],
+              "answer": "bibliotEka",
+              "hint": "библиоте́ка"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "test": {
+    "id": "01-alfabet-test",
+    "totalQuestions": 15,
+    "passingScore": 11,
+    "instruction": "Финальный тест по теме «Алфавит и произношение». Вопросы перемешаны из всех уроков.",
+    "questionPool": [
+      {
+        "type": "multiple_choice",
+        "question": "Какой звук обозначает буква Š?",
+        "options": ["с", "щ", "ш", "х"],
+        "answer": "ш"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Какой звук обозначает буква J?",
+        "options": ["дж", "ж", "и", "й"],
+        "answer": "й"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "В чём главное правило Вука Караджича?",
+        "options": [
+          "Читай как пишется, пиши как слышится",
+          "Одна буква = один звук",
+          "Все гласные ударные",
+          "Нет мягких согласных"
+        ],
+        "answer": "Одна буква = один звук"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Как читается слово «ljubav»?",
+        "options": ["лубав", "жубав", "люба́в", "йубав"],
+        "answer": "люба́в"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Что означает слово «restoran»?",
+        "options": ["магазин", "ресторан", "отель", "банк"],
+        "answer": "ресторан"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Где ударение в слове «muzika»?",
+        "options": ["muZIka", "MUzika", "muziKA"],
+        "answer": "MUzika"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Чем отличается Ć от Č?",
+        "options": [
+          "Ничем, это одна буква",
+          "Ć — мягкое чь, Č — твёрдое ч",
+          "Ć — твёрдое, Č — мягкое",
+          "Разные буквы но одинаковый звук"
+        ],
+        "answer": "Ć — мягкое чь, Č — твёрдое ч"
+      },
+      {
+        "type": "match_pairs",
+        "instruction": "Сопоставь слова",
+        "pairs": [
+          { "serbian": "hotel", "russian": "отель" },
+          { "serbian": "doktor", "russian": "доктор" },
+          { "serbian": "film", "russian": "фильм" }
+        ]
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Как читается буква E в сербском?",
+        "options": ["е (как в русском «е»)", "э", "и", "ё"],
+        "answer": "э"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Что означает «autobus»?",
+        "options": ["автомобиль", "автобус", "такси", "трамвай"],
+        "answer": "автобус"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Как произносится «džezva»?",
+        "options": ["жезва", "дезва", "джезва́", "йезва"],
+        "answer": "джезва́"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Что означает «biblioteka»?",
+        "options": ["больница", "библиотека", "школа", "университет"],
+        "answer": "библиотека"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Смягчает ли буква И предыдущую согласную в сербском?",
+        "options": ["Да, как в русском", "Нет, не смягчает", "Только в начале слова"],
+        "answer": "Нет, не смягчает"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Где ударение в слове «telefon»?",
+        "options": ["ТЕлефон", "теЛЕфон", "телеФОН"],
+        "answer": "телеФОН"
+      },
+      {
+        "type": "match_pairs",
+        "instruction": "Сопоставь эмодзи и слово",
+        "pairs": [
+          { "emoji": "🍞", "serbian": "hleb" },
+          { "emoji": "🎵", "serbian": "muzika" },
+          { "emoji": "🏦", "serbian": "banka" }
+        ]
+      }
+    ]
+  }
+}
